@@ -4,7 +4,7 @@ export const site = {
   tagline: "Find the source. Fix the cause. Protect the property.",
   description:
     "Technology-first water leakage detection, dampness inspection, and property diagnostics for homes, societies, and commercial buildings.",
-  url: "https://aperture.example",
+  url: "https://ayush-upadhyay22.github.io/LekageDetection",
   email: "inspect@aperture.example",
   phoneDisplay: "+91 98765 43210",
   phoneTel: "+919876543210",
