@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { track } from "../lib/analytics";
 import { site, telHref, whatsappHref } from "../lib/site";
 
@@ -21,17 +22,15 @@ export default function FloatingContactButtons() {
         >
           WhatsApp
         </a>
-        <a
+        <Link
           href="/contact"
           onClick={() => track("book_inspection_click", { source: "mobile_bar" })}
           className="rounded-sm bg-copper px-2 py-3 text-white"
         >
           Book
-        </a>
+        </Link>
       </div>
-      <p className="sr-only">
-        {site.name} mobile contact bar
-      </p>
+      <p className="sr-only">{site.name} mobile contact bar</p>
     </div>
   );
 }
