@@ -58,6 +58,220 @@ body {
   animation: scanline 5s ease-in-out infinite;
 }
 
+@keyframes hero-scan-beam {
+  0%,
+  8% {
+    transform: translateY(-120%);
+    opacity: 0.95;
+  }
+  38% {
+    transform: translateY(280%);
+    opacity: 0.95;
+  }
+  42%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-wall {
+  0%,
+  36% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  48% {
+    opacity: 1;
+    transform: scale(1.35) translate(-6%, 8%);
+  }
+  62% {
+    opacity: 0;
+    transform: scale(2.6) translate(-10%, 14%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.6) translate(-10%, 14%);
+  }
+}
+
+@keyframes hero-pipe {
+  0%,
+  48% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  62% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-reticle {
+  0%,
+  18% {
+    opacity: 0.15;
+    transform: translate(-50%, -180%) scale(1.4);
+  }
+  34% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  48% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+  58%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-status {
+  0%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-status-scan {
+  0%,
+  32% {
+    opacity: 1;
+  }
+  36%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-status-lock {
+  0%,
+  32% {
+    opacity: 0;
+  }
+  36%,
+  48% {
+    opacity: 1;
+  }
+  52%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-status-zoom {
+  0%,
+  48% {
+    opacity: 0;
+  }
+  52%,
+  62% {
+    opacity: 1;
+  }
+  68%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-status-found {
+  0%,
+  64% {
+    opacity: 0;
+  }
+  70%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-drip {
+  0% {
+    transform: translateY(0);
+    opacity: 0.95;
+  }
+  80% {
+    transform: translateY(88px);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(110px);
+    opacity: 0;
+  }
+}
+
+.hero-inspect {
+  contain: layout paint;
+}
+
+.hero-inspect-viewport {
+  isolation: isolate;
+  contain: layout paint;
+}
+
+.hero-wall {
+  animation: hero-wall 12s ease-in-out infinite;
+  transform-origin: 48% 55%;
+}
+
+.hero-pipe {
+  animation: hero-pipe 12s ease-in-out infinite;
+}
+
+.hero-scan-beam {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(157, 231, 255, 0.15),
+    rgba(77, 163, 255, 0.55),
+    rgba(157, 231, 255, 0.15),
+    transparent
+  );
+  animation: hero-scan-beam 12s ease-in-out infinite;
+}
+
+.hero-reticle {
+  animation: hero-reticle 12s ease-in-out infinite;
+}
+
+.hero-status {
+  animation: hero-status 12s ease-in-out infinite;
+}
+
+.hero-status-scan {
+  animation: hero-status-scan 12s ease-in-out infinite;
+}
+
+.hero-status-lock {
+  animation: hero-status-lock 12s ease-in-out infinite;
+}
+
+.hero-status-zoom {
+  animation: hero-status-zoom 12s ease-in-out infinite;
+}
+
+.hero-status-found {
+  animation: hero-status-found 12s ease-in-out infinite;
+}
+
+.hero-drip {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hero-drip 1.6s ease-in infinite;
+}
+
+.hero-drip-2 {
+  animation-delay: 0.45s;
+}
+
+.hero-drip-3 {
+  animation-delay: 0.9s;
+}
+
 @keyframes pulse-source {
   0%,
   100% {
@@ -80,7 +294,25 @@ body {
   }
 
   .scan-line,
-  .source-pulse {
+  .source-pulse,
+  .hero-wall,
+  .hero-pipe,
+  .hero-scan-beam,
+  .hero-reticle,
+  .hero-status,
+  .hero-status-scan,
+  .hero-status-lock,
+  .hero-status-zoom,
+  .hero-status-found,
+  .hero-drip {
     animation: none;
+  }
+
+  .hero-wall {
+    opacity: 0;
+  }
+
+  .hero-pipe {
+    opacity: 1;
   }
 }

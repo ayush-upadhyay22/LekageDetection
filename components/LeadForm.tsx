@@ -55,16 +55,19 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
   const [step, setStep] = useState(1);
   const [started, setStarted] = useState(false);
   const [form, setForm] = useState(empty);
+  const [cityQuery, setCityQuery] = useState("");
   const [done, setDone] = useState(false);
 
   const selectedPackage =
     inspectionPackages.find((item) => item.id === form.packageId) ??
     inspectionPackages[0];
 
-  const cities = useMemo(
-    () => (form.state ? indianStates[form.state] ?? [] : []),
-    [form.state],
-  );
+  const cities = useMemo(() => {
+    const all = form.state ? indianStates[form.state] ?? [] : [];
+    const query = cityQuery.trim().toLowerCase();
+    if (!query) return all;
+    return all.filter((city) => city.toLowerCase().includes(query));
+  }, [form.state, cityQuery]);
 
   const addressComplete =
     form.address.trim().length > 6 &&
@@ -81,12 +84,12 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
 
   function update(key: keyof typeof empty, value: string | boolean) {
     start();
-    setForm((current) => {
-      if (key === "state") {
-        return { ...current, state: String(value), city: "" };
-      }
-      return { ...current, [key]: value };
-    });
+    if (key === "state") {
+      setCityQuery("");
+      setForm((current) => ({ ...current, state: String(value), city: "" }));
+      return;
+    }
+    setForm((current) => ({ ...current, [key]: value }));
   }
 
   function submit(event: React.FormEvent) {
@@ -219,6 +222,16 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
           </label>
           <label className="grid gap-1 text-sm">
             City
+            <input
+              type="search"
+              disabled={!form.state}
+              value={cityQuery}
+              placeholder={
+                form.state ? "Search city" : "Select state first"
+              }
+              onChange={(event) => setCityQuery(event.target.value)}
+              className={`${fieldClass} disabled:cursor-not-allowed disabled:opacity-50`}
+            />
             <select
               required
               value={form.city}

@@ -27,19 +27,12 @@ export default function Hero() {
           <p className="mt-4 text-sm text-paper/55">
             Currently visiting {locations.map((item) => item.city).join(", ")}.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8">
             <BookLink
               source="hero_primary"
               className="inline-flex h-12 items-center justify-center bg-copper px-6 text-sm font-medium text-white hover:bg-copper-2"
             >
               Book an inspection
-            </BookLink>
-            <BookLink
-              href="/contact#consultation"
-              source="hero_consultation"
-              className="inline-flex h-12 items-center justify-center border border-white/20 px-6 text-sm font-medium text-paper hover:bg-white/5"
-            >
-              Get free consultation
             </BookLink>
           </div>
         </div>

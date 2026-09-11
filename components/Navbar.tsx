@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { asset } from "../lib/asset";
 import { track } from "../lib/analytics";
 import { navLinks, site } from "../lib/site";
-import BrandMark from "./BrandMark";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,9 +15,15 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-paper/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="flex items-center gap-2.5">
-          <BrandMark />
-          <span className="text-lg font-semibold tracking-tight">{site.name}</span>
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src={asset("/brand/logo-wordmark.jpeg")}
+            alt={site.name}
+            width={280}
+            height={72}
+            className="h-9 w-auto max-w-[200px] object-contain sm:h-10 sm:max-w-[240px]"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 text-sm md:flex">

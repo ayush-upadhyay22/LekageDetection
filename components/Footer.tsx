@@ -1,18 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
+import { asset } from "../lib/asset";
 import { services } from "../lib/data/services";
 import { locations } from "../lib/data/locations";
 import { site } from "../lib/site";
-import BrandMark from "./BrandMark";
 
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-line bg-forest text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <BrandMark className="h-9 w-9" />
-            <p className="text-xl font-semibold">{site.name}</p>
-          </div>
+          <Image
+            src={asset("/brand/logo-dark.jpeg")}
+            alt={site.name}
+            width={320}
+            height={180}
+            className="h-auto w-full max-w-[240px] rounded-sm object-cover"
+          />
           <p className="mt-3 max-w-xs text-sm leading-6 text-paper/70">{site.tagline}</p>
         </div>
         <div>

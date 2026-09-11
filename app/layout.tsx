@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.svg",
+        url: `${site.url}/brand/logo-wordmark.jpeg`,
         width: 1200,
         height: 630,
         alt: "LEAKScan-IQ — water leakage detection",
@@ -57,11 +57,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LEAKScan-IQ | Water Leakage Detection",
     description: site.description,
-    images: ["/og.svg"],
+    images: [`${site.url}/brand/logo-wordmark.jpeg`],
   },
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: `${site.url}/brand/logo-mark.jpeg`,
+    apple: `${site.url}/brand/logo-mark.jpeg`,
   },
   robots: { index: true, follow: true },
 };

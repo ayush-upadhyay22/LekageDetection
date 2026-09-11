@@ -13,8 +13,8 @@ export function localBusinessJsonLd() {
     alternateName: ["LEAK Scan IQ", "LeakScan IQ", "LEAKScan IQ"],
     description: site.description,
     url: site.url,
-    image: `${site.url}/logo.svg`,
-    logo: `${site.url}/logo.svg`,
+    image: `${site.url}/brand/logo-dark.jpeg`,
+    logo: `${site.url}/brand/logo-mark.jpeg`,
     telephone: site.phoneTel,
     email: site.email,
     priceRange: "₹₹",
@@ -88,7 +88,7 @@ export function articleJsonLd(title: string, description: string, url: string) {
     headline: title,
     description,
     author: { "@type": "Organization", name: site.legalName },
-    publisher: { "@type": "Organization", name: site.legalName, logo: `${site.url}/logo.svg` },
+    publisher: { "@type": "Organization", name: site.legalName, logo: `${site.url}/brand/logo-mark.jpeg` },
     url,
   };
 }
