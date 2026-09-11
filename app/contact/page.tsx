@@ -6,7 +6,7 @@ import { site, telHref, whatsappHref } from "../../lib/site";
 export const metadata: Metadata = {
   title: "Book a water leakage inspection",
   description:
-    "Book LEAKScan-IQ for water leakage detection. Add photos, pay on UPI, or WhatsApp +91 88399 70150.",
+    "Book LEAKScan-IQ for water leakage detection. Pay on UPI, or WhatsApp +91 88399 70150.",
   alternates: { canonical: "/contact" },
 };
 
@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Book an inspection or ask a scoping question."
-        body="Use the form to add photos, pay the visit fee, and send a request. Call or WhatsApp if the issue is active and you need a same-week window."
+        body="Use the form to share the inspection address, pay the visit fee, and send a request. Call or WhatsApp if the issue is active and you need a same-week window."
       />
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-2">
         <div>

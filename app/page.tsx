@@ -205,8 +205,8 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.2em] text-forest">Book</p>
             <h2 className="serif mt-3 text-4xl">Request an inspection</h2>
             <p className="mt-4 max-w-md text-muted">
-              Add photos, pay the visit fee, and send the request. We confirm
-              the slot before we travel.
+              Share the full address, pay the visit fee, and send the request.
+              We confirm the slot before we travel.
             </p>
           </div>
           <LeadForm />

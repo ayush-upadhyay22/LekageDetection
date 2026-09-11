@@ -1,17 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { track } from "../lib/analytics";
-import { locations } from "../lib/data/locations";
+import { indianStates, stateNames } from "../lib/data/india-address";
 import {
   inspectionPackages,
   site,
   upiPayHref,
   whatsappHref,
 } from "../lib/site";
-import PhotoCapture from "./PhotoCapture";
 
-const TOTAL_STEPS = 6;
+const TOTAL_STEPS = 5;
 
 const needs = [
   "Water leakage",
@@ -38,7 +37,10 @@ const propertyTypes = [
 const empty = {
   need: "",
   propertyType: "",
-  location: "",
+  address: "",
+  state: "",
+  city: "",
+  pincode: "",
   name: "",
   phone: "",
   email: "",
@@ -47,16 +49,28 @@ const empty = {
   paid: false,
 };
 
+const fieldClass = "h-12 border border-line bg-paper px-3";
+
 export default function LeadForm({ compact = false }: { compact?: boolean }) {
   const [step, setStep] = useState(1);
   const [started, setStarted] = useState(false);
   const [form, setForm] = useState(empty);
-  const [photos, setPhotos] = useState<File[]>([]);
   const [done, setDone] = useState(false);
 
   const selectedPackage =
     inspectionPackages.find((item) => item.id === form.packageId) ??
     inspectionPackages[0];
+
+  const cities = useMemo(
+    () => (form.state ? indianStates[form.state] ?? [] : []),
+    [form.state],
+  );
+
+  const addressComplete =
+    form.address.trim().length > 6 &&
+    Boolean(form.state) &&
+    Boolean(form.city) &&
+    /^\d{6}$/.test(form.pincode);
 
   function start() {
     if (!started) {
@@ -67,16 +81,21 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
 
   function update(key: keyof typeof empty, value: string | boolean) {
     start();
-    setForm((current) => ({ ...current, [key]: value }));
+    setForm((current) => {
+      if (key === "state") {
+        return { ...current, state: String(value), city: "" };
+      }
+      return { ...current, [key]: value };
+    });
   }
 
   function submit(event: React.FormEvent) {
     event.preventDefault();
     track("form_submitted", {
       need: form.need,
-      city: form.location,
+      city: form.city,
+      state: form.state,
       package: selectedPackage.id,
-      photos: photos.length,
       paid: form.paid,
     });
     setDone(true);
@@ -86,76 +105,32 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
     `Inspection request — ${site.name}`,
     `Need: ${form.need}`,
     `Property: ${form.propertyType}`,
-    `Location: ${form.location}`,
-    `Photos on this phone: ${photos.length}`,
+    `Address: ${form.address}`,
+    `City: ${form.city}`,
+    `State: ${form.state}`,
+    `PIN: ${form.pincode}`,
     `Package: ${selectedPackage.name} · ₹${selectedPackage.amount}`,
     `Payment: ${form.paid ? `UPI done${form.utr ? ` · UTR ${form.utr}` : ""}` : "not marked paid yet"}`,
     `Name: ${form.name}`,
     `Phone: ${form.phone}`,
     `Email: ${form.email}`,
-    photos.length
-      ? "I will attach the inspection photos in this chat."
-      : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
-
-  const canSharePhotos =
-    photos.length > 0 &&
-    typeof navigator !== "undefined" &&
-    typeof navigator.share === "function" &&
-    (typeof navigator.canShare !== "function" ||
-      navigator.canShare({ files: photos }));
-
-  async function sharePhotosToWhatsApp() {
-    track("whatsapp_click", { source: "form_share_photos" });
-    try {
-      await navigator.share({
-        title: `${site.name} inspection request`,
-        text: message,
-        files: photos,
-      });
-    } catch (error) {
-      if (error instanceof DOMException && error.name === "AbortError") return;
-      window.location.href = whatsappHref(message);
-    }
-  }
+  ].join("\n");
 
   if (done) {
     return (
       <div className="rounded-sm border border-line bg-white p-6">
         <p className="serif text-2xl">Request captured</p>
-        {canSharePhotos ? (
-          <p className="mt-3 text-sm leading-6 text-muted">
-            On this phone you can send the details and the {photos.length} photo
-            {photos.length === 1 ? "" : "s"} in one step. Choose WhatsApp in the
-            share sheet.
-          </p>
-        ) : (
-          <p className="mt-3 text-sm leading-6 text-muted">
-            WhatsApp’s chat link can only send text. It cannot attach the photos
-            from this form. Open WhatsApp with the request, then attach the same
-            images from your gallery. If that does not launch, email {site.email}.
-          </p>
-        )}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          {canSharePhotos ? (
-            <button
-              type="button"
-              onClick={() => void sharePhotosToWhatsApp()}
-              className="inline-flex bg-forest px-5 py-3 text-sm font-medium text-paper"
-            >
-              Send photos on WhatsApp
-            </button>
-          ) : null}
-          <a
-            href={whatsappHref(message)}
-            onClick={() => track("whatsapp_click", { source: "form_complete" })}
-            className="inline-flex bg-copper px-5 py-3 text-sm font-medium text-white"
-          >
-            {canSharePhotos ? "Send text only" : "Send on WhatsApp"}
-          </a>
-        </div>
+        <p className="mt-3 text-sm leading-6 text-muted">
+          Open WhatsApp with the inspection details prefilled. If that does not
+          launch, email {site.email}.
+        </p>
+        <a
+          href={whatsappHref(message)}
+          onClick={() => track("whatsapp_click", { source: "form_complete" })}
+          className="mt-6 inline-flex bg-copper px-5 py-3 text-sm font-medium text-white"
+        >
+          Send on WhatsApp
+        </a>
       </div>
     );
   }
@@ -213,29 +188,73 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
       ) : null}
 
       {step === 3 ? (
-        <label className="mt-6 grid gap-2">
-          <span className="serif text-2xl">Location</span>
-          <input
-            required
-            list="city-list"
-            value={form.location}
-            onChange={(event) => update("location", event.target.value)}
-            placeholder="City or locality"
-            className="h-12 border border-line bg-paper px-3"
-          />
-          <datalist id="city-list">
-            {locations.map((location) => (
-              <option key={location.slug} value={location.city} />
-            ))}
-          </datalist>
-        </label>
+        <div className="mt-6 grid gap-4">
+          <p className="serif text-2xl">Inspection address</p>
+          <label className="grid gap-1 text-sm">
+            Full address
+            <textarea
+              required
+              rows={3}
+              value={form.address}
+              onChange={(event) => update("address", event.target.value)}
+              placeholder="House / flat, building, street, landmark"
+              className="border border-line bg-paper px-3 py-2"
+            />
+          </label>
+          <label className="grid gap-1 text-sm">
+            State
+            <select
+              required
+              value={form.state}
+              onChange={(event) => update("state", event.target.value)}
+              className={fieldClass}
+            >
+              <option value="">Select state</option>
+              {stateNames.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="grid gap-1 text-sm">
+            City
+            <select
+              required
+              value={form.city}
+              disabled={!form.state}
+              onChange={(event) => update("city", event.target.value)}
+              className={`${fieldClass} disabled:cursor-not-allowed disabled:opacity-50`}
+            >
+              <option value="">
+                {form.state ? "Select city" : "Select state first"}
+              </option>
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="grid gap-1 text-sm">
+            PIN code
+            <input
+              required
+              inputMode="numeric"
+              pattern="\d{6}"
+              maxLength={6}
+              value={form.pincode}
+              onChange={(event) =>
+                update("pincode", event.target.value.replace(/\D/g, "").slice(0, 6))
+              }
+              placeholder="6-digit PIN"
+              className={fieldClass}
+            />
+          </label>
+        </div>
       ) : null}
 
       {step === 4 ? (
-        <PhotoCapture files={photos} onChange={setPhotos} />
-      ) : null}
-
-      {step === 5 ? (
         <div className="mt-6 grid gap-3">
           <p className="serif text-2xl">How should we reach you?</p>
           <input
@@ -244,7 +263,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
             placeholder="Name"
             value={form.name}
             onChange={(event) => update("name", event.target.value)}
-            className="h-12 border border-line bg-paper px-3"
+            className={fieldClass}
           />
           <input
             required
@@ -253,7 +272,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
             placeholder="Phone"
             value={form.phone}
             onChange={(event) => update("phone", event.target.value)}
-            className="h-12 border border-line bg-paper px-3"
+            className={fieldClass}
           />
           <input
             name="email"
@@ -261,12 +280,12 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
             placeholder="Email (optional)"
             value={form.email}
             onChange={(event) => update("email", event.target.value)}
-            className="h-12 border border-line bg-paper px-3"
+            className={fieldClass}
           />
         </div>
       ) : null}
 
-      {step === 6 ? (
+      {step === 5 ? (
         <fieldset className="mt-6">
           <legend className="serif text-2xl">Inspection fee</legend>
           <p className="mt-2 text-sm leading-6 text-muted">
@@ -332,40 +351,45 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
         {step === 2 && !form.propertyType ? (
           <p className="text-sm text-muted">Select a property type to continue.</p>
         ) : null}
-        <div className="flex gap-3">
-        {step > 1 ? (
-          <button
-            type="button"
-            onClick={() => setStep((value) => value - 1)}
-            className="h-11 px-4 text-sm"
-          >
-            Back
-          </button>
+        {step === 3 && !addressComplete ? (
+          <p className="text-sm text-muted">
+            Enter full address, state, city, and a 6-digit PIN code.
+          </p>
         ) : null}
-        {step < TOTAL_STEPS ? (
-          <button
-            type="button"
-            disabled={
-              (step === 1 && !form.need) ||
-              (step === 2 && !form.propertyType) ||
-              (step === 3 && !form.location)
-            }
-            onClick={() => {
-              start();
-              setStep((value) => value + 1);
-            }}
-            className="h-11 bg-copper px-5 text-sm font-medium text-white hover:bg-copper-2 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            Continue
-          </button>
-        ) : (
-          <button
-            type="submit"
-            className="h-11 bg-copper px-5 text-sm font-medium text-white hover:bg-copper-2"
-          >
-            Request inspection
-          </button>
-        )}
+        <div className="flex gap-3">
+          {step > 1 ? (
+            <button
+              type="button"
+              onClick={() => setStep((value) => value - 1)}
+              className="h-11 px-4 text-sm"
+            >
+              Back
+            </button>
+          ) : null}
+          {step < TOTAL_STEPS ? (
+            <button
+              type="button"
+              disabled={
+                (step === 1 && !form.need) ||
+                (step === 2 && !form.propertyType) ||
+                (step === 3 && !addressComplete)
+              }
+              onClick={() => {
+                start();
+                setStep((value) => value + 1);
+              }}
+              className="h-11 bg-copper px-5 text-sm font-medium text-white hover:bg-copper-2 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Continue
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="h-11 bg-copper px-5 text-sm font-medium text-white hover:bg-copper-2"
+            >
+              Request inspection
+            </button>
+          )}
         </div>
       </div>
     </form>
