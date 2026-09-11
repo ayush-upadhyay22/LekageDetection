@@ -1,0 +1,12 @@
+# GitHub Pages may still run Jekyll against /docs.
+# Keep Next.js underscore assets and do not wrap HTML in a theme.
+theme: null
+plugins: []
+include:
+  - _next
+  - _next/static
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: null

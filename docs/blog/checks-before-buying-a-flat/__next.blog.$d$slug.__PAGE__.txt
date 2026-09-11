@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:I[97367,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"ViewportBoundary"]
+8:I[97367,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"MetadataBoundary"]
+6:X
+1c:X
+1c:C
+0:{"buildId":"oqnJhwECpd18jpKiLYEof","data":[{"rsc":["$","$1","c",{"children":[["$","main",null,{"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Things to check before buying a flat\",\"description\":\"A walkthrough that only looks at finishes will miss the water-related costs that show up after you move in.\",\"author\":{\"@type\":\"Organization\",\"name\":\"LEAKScan-IQ\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"LEAKScan-IQ\",\"logo\":\"https://ayush-upadhyay22.github.io/LekageDetection/logo.svg\"},\"url\":\"https://ayush-upadhyay22.github.io/LekageDetection/blog/checks-before-buying-a-flat\"}"}}],["$","article",null,{"className":"mx-auto max-w-3xl px-5 py-16","children":[["$","p",null,{"className":"text-xs uppercase tracking-[0.16em] text-muted","children":["Property Buying"," · ","2026-08-21"]}],["$","h1",null,{"className":"serif mt-4 text-4xl md:text-5xl","children":"Things to check before buying a flat"}],["$","p",null,{"className":"mt-6 text-lg text-muted","children":"A walkthrough that only looks at finishes will miss the water-related costs that show up after you move in."}],["$","div",null,{"className":"mt-10 space-y-6 text-base leading-8 text-ink","children":[["$","p","Visit bathrooms, the kit",{"children":"Visit bathrooms, the kitchen wet wall, and any terrace attached to the unit. Look at the ceiling of the flat if you can understand what sits above you. Ask the society about historic leakage in the stack."}],["$","p","Cosmetic renovation can ",{"children":"Cosmetic renovation can hide historic dampness. A moisture check and a written observation list are more useful in a price negotiation than a verbal ‘looks fine’."}],["$","p","Construction quality at ",{"children":"Construction quality at handover is a separate exercise: fixtures, slopes to drains, and visible plumbing. If the unit is still being finished, book the inspection when water is actually available to the fittings."}]]}]]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Things to check before buying a flat | LEAKScan-IQ"}],["$","meta","1",{"name":"description","content":"A walkthrough that only looks at finishes will miss the water-related costs that show up after you move in."}],["$","meta","2",{"name":"application-name","content":"LEAKScan-IQ"}],["$","link","3",{"rel":"author","href":"https://ayush-upadhyay22.github.io/LekageDetection"}],["$","meta","4",{"name":"author","content":"LEAKScan-IQ"}],["$","meta","5",{"name":"keywords","content":"LEAKScan-IQ,water leakage detection,water leakage detection near me,dampness inspection,seepage detection,underground leak detection,thermal leak detection,property inspection,bathroom leakage inspection,water leakage detection Indore,water leakage detection Bhopal,water leakage detection Ahmedabad,water leakage detection Mumbai"}],["$","meta","6",{"name":"creator","content":"LEAKScan-IQ"}],["$","meta","7",{"name":"publisher","content":"LEAKScan-IQ"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","meta","9",{"name":"category","content":"property inspection"}],["$","link","10",{"rel":"canonical","href":"https://ayush-upadhyay22.github.io/LekageDetection/blog/checks-before-buying-a-flat/"}],["$","meta","11",{"property":"og:title","content":"LEAKScan-IQ | Water Leakage Detection & Property Inspection"}],["$","meta","12",{"property":"og:description","content":"LEAKScan-IQ provides water leakage detection, dampness inspection, seepage detection, thermal inspection, and property diagnostics for homes, societies, and commercial buildings in Indore, Bhopal, Ahmedabad, and Mumbai."}],"$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17"]}]}]}],"$L18"]}],"isPartial":"$@19","staleTime":"$6","varyParams":null},{"rsc":"$L1a","isPartial":"$@1b","staleTime":"$6","varyParams":"$1c"},{"rsc":"$L1d","isPartial":"$@1e","staleTime":"$6","varyParams":"$1c"}],"isUpgradeableISRFallback":false,"a":"$@1f","rootVaryParams":null,"needsRuntimeRequest":"$@20"}
+21:I[27201,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"IconMark"]
+22:I[39756,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"default"]
+23:I[37457,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"default"]
+4:null
+9:["$","meta","13",{"property":"og:url","content":"https://ayush-upadhyay22.github.io/LekageDetection/"}]
+a:["$","meta","14",{"property":"og:site_name","content":"LEAKScan-IQ"}]
+b:["$","meta","15",{"property":"og:locale","content":"en_IN"}]
+c:["$","meta","16",{"property":"og:image","content":"https://ayush-upadhyay22.github.io/LekageDetection/og.svg"}]
+d:["$","meta","17",{"property":"og:image:width","content":"1200"}]
+e:["$","meta","18",{"property":"og:image:height","content":"630"}]
+f:["$","meta","19",{"property":"og:image:alt","content":"LEAKScan-IQ — water leakage detection"}]
+10:["$","meta","20",{"property":"og:type","content":"website"}]
+11:["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}]
+12:["$","meta","22",{"name":"twitter:title","content":"LEAKScan-IQ | Water Leakage Detection"}]
+13:["$","meta","23",{"name":"twitter:description","content":"LEAKScan-IQ provides water leakage detection, dampness inspection, seepage detection, thermal inspection, and property diagnostics for homes, societies, and commercial buildings in Indore, Bhopal, Ahmedabad, and Mumbai."}]
+14:["$","meta","24",{"name":"twitter:image","content":"https://ayush-upadhyay22.github.io/LekageDetection/og.svg"}]
+15:["$","link","25",{"rel":"icon","href":"/logo.svg"}]
+16:["$","link","26",{"rel":"apple-touch-icon","href":"/logo.svg"}]
+17:["$","$L21","27",{}]
+18:["$","meta",null,{"name":"next-size-adjust","content":""}]
+1a:["$","$1","c",{"children":[null,["$","$L22",null,{"parallelRouterKey":"children","template":["$","$L23",null,{}]}]]}]
+1d:["$","$1","c",{"children":[null,["$","$L22",null,{"parallelRouterKey":"children","template":["$","$L23",null,{}]}]]}]
+20:true
+6:300
+6:C
+1f:0
+19:"$undefined"
+1b:"$undefined"
+1e:"$undefined"
+5:"$undefined"

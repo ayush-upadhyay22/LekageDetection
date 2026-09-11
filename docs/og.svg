@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="LEAKScan-IQ water leakage detection">
+  <rect width="1200" height="630" fill="#0A3D7A"/>
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="#ffffff"/>
+  <circle cx="220" cy="315" r="78" fill="#0A3D7A"/>
+  <path d="M220 250c-22 26-40 46-40 68a40 40 0 1 0 80 0c0-22-18-42-40-68Z" fill="#ffffff"/>
+  <text x="340" y="300" fill="#0A3D7A" font-size="72" font-family="Georgia, serif">LEAKScan-IQ</text>
+  <text x="340" y="360" fill="#1677D0" font-size="28" font-family="system-ui, sans-serif">Water leakage detection &amp; property inspection</text>
+</svg>

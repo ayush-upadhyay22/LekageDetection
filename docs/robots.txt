@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://ayush-upadhyay22.github.io/LekageDetection/sitemap.xml

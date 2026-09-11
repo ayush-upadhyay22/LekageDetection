@@ -1,0 +1,40 @@
+1:"$Sreact.fragment"
+2:I[97367,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"ViewportBoundary"]
+8:I[97367,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"MetadataBoundary"]
+6:X
+1d:X
+1d:C
+0:{"buildId":"oqnJhwECpd18jpKiLYEof","data":[{"rsc":["$","$1","c",{"children":[["$","main",null,{"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"How to investigate a water leak before you break a wall\",\"description\":\"A stain is a symptom. Opening tiles first often misses the path the water actually took.\",\"author\":{\"@type\":\"Organization\",\"name\":\"LEAKScan-IQ\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"LEAKScan-IQ\",\"logo\":\"https://ayush-upadhyay22.github.io/LekageDetection/logo.svg\"},\"url\":\"https://ayush-upadhyay22.github.io/LekageDetection/blog/find-water-leak-without-breaking-walls\"}"}}],["$","article",null,{"className":"mx-auto max-w-3xl px-5 py-16","children":[["$","p",null,{"className":"text-xs uppercase tracking-[0.16em] text-muted","children":["Water Leakage"," · ","2026-04-12"]}],["$","h1",null,{"className":"serif mt-4 text-4xl md:text-5xl","children":"How to investigate a water leak before you break a wall"}],["$","p",null,{"className":"mt-6 text-lg text-muted","children":"A stain is a symptom. Opening tiles first often misses the path the water actually took."}],["$","div",null,{"className":"mt-10 space-y-6 text-base leading-8 text-ink","children":[["$","p","Most households start wi",{"children":"Most households start with a hammer because the stain is on a wall they can reach. Water, however, often travels along a slab, a pipe chase, or a joint before it appears. Breaking the stained finish can destroy evidence and still miss the source."}],["$","p","A better sequence is to ",{"children":"A better sequence is to record when the moisture appears, inspect the wet room above or adjacent, compare moisture readings, and only then decide whether a small opening is justified. Thermal patterns on surfaces can help mark a zone; they cannot promise a pipe location by themselves."}],["$","p","If you are mid-repair, p",{"children":"If you are mid-repair, pause cosmetic covering until the active path is understood. Paint over a live leak and the same patch usually returns."}]]}]]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"How to investigate a water leak before you break a wall | LEAKScan-IQ"}],["$","meta","1",{"name":"description","content":"A stain is a symptom. Opening tiles first often misses the path the water actually took."}],["$","meta","2",{"name":"application-name","content":"LEAKScan-IQ"}],["$","link","3",{"rel":"author","href":"https://ayush-upadhyay22.github.io/LekageDetection"}],["$","meta","4",{"name":"author","content":"LEAKScan-IQ"}],["$","meta","5",{"name":"keywords","content":"LEAKScan-IQ,water leakage detection,water leakage detection near me,dampness inspection,seepage detection,underground leak detection,thermal leak detection,property inspection,bathroom leakage inspection,water leakage detection Indore,water leakage detection Bhopal,water leakage detection Ahmedabad,water leakage detection Mumbai"}],["$","meta","6",{"name":"creator","content":"LEAKScan-IQ"}],["$","meta","7",{"name":"publisher","content":"LEAKScan-IQ"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","meta","9",{"name":"category","content":"property inspection"}],["$","link","10",{"rel":"canonical","href":"https://ayush-upadhyay22.github.io/LekageDetection/blog/find-water-leak-without-breaking-walls/"}],["$","meta","11",{"property":"og:title","content":"LEAKScan-IQ | Water Leakage Detection & Property Inspection"}],"$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18"]}]}]}],"$L19"]}],"isPartial":"$@1a","staleTime":"$6","varyParams":null},{"rsc":"$L1b","isPartial":"$@1c","staleTime":"$6","varyParams":"$1d"},{"rsc":"$L1e","isPartial":"$@1f","staleTime":"$6","varyParams":"$1d"}],"isUpgradeableISRFallback":false,"a":"$@20","rootVaryParams":null,"needsRuntimeRequest":"$@21"}
+22:I[27201,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"IconMark"]
+23:I[39756,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"default"]
+24:I[37457,["/LekageDetection/_next/static/chunks/1pk_jfy4-rrk-.js"],"default"]
+4:null
+9:["$","meta","12",{"property":"og:description","content":"LEAKScan-IQ provides water leakage detection, dampness inspection, seepage detection, thermal inspection, and property diagnostics for homes, societies, and commercial buildings in Indore, Bhopal, Ahmedabad, and Mumbai."}]
+a:["$","meta","13",{"property":"og:url","content":"https://ayush-upadhyay22.github.io/LekageDetection/"}]
+b:["$","meta","14",{"property":"og:site_name","content":"LEAKScan-IQ"}]
+c:["$","meta","15",{"property":"og:locale","content":"en_IN"}]
+d:["$","meta","16",{"property":"og:image","content":"https://ayush-upadhyay22.github.io/LekageDetection/og.svg"}]
+e:["$","meta","17",{"property":"og:image:width","content":"1200"}]
+f:["$","meta","18",{"property":"og:image:height","content":"630"}]
+10:["$","meta","19",{"property":"og:image:alt","content":"LEAKScan-IQ — water leakage detection"}]
+11:["$","meta","20",{"property":"og:type","content":"website"}]
+12:["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}]
+13:["$","meta","22",{"name":"twitter:title","content":"LEAKScan-IQ | Water Leakage Detection"}]
+14:["$","meta","23",{"name":"twitter:description","content":"LEAKScan-IQ provides water leakage detection, dampness inspection, seepage detection, thermal inspection, and property diagnostics for homes, societies, and commercial buildings in Indore, Bhopal, Ahmedabad, and Mumbai."}]
+15:["$","meta","24",{"name":"twitter:image","content":"https://ayush-upadhyay22.github.io/LekageDetection/og.svg"}]
+16:["$","link","25",{"rel":"icon","href":"/logo.svg"}]
+17:["$","link","26",{"rel":"apple-touch-icon","href":"/logo.svg"}]
+18:["$","$L22","27",{}]
+19:["$","meta",null,{"name":"next-size-adjust","content":""}]
+1b:["$","$1","c",{"children":[null,["$","$L23",null,{"parallelRouterKey":"children","template":["$","$L24",null,{}]}]]}]
+1e:["$","$1","c",{"children":[null,["$","$L23",null,{"parallelRouterKey":"children","template":["$","$L24",null,{}]}]]}]
+21:true
+6:300
+6:C
+20:0
+1a:"$undefined"
+1c:"$undefined"
+1f:"$undefined"
+5:"$undefined"
