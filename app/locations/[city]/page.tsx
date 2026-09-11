@@ -27,8 +27,8 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
   return {
-    title: `Water leakage detection in ${location.city}`,
-    description: `Water leakage detection, dampness inspection, and property diagnostics in ${location.city}, ${location.state}.`,
+    title: `Water Leakage Detection in ${location.city}`,
+    description: `LEAKScan-IQ water leakage detection, dampness inspection, and seepage detection in ${location.city}, ${location.state}. Book a non-invasive inspection.`,
     alternates: { canonical: `/locations/${location.slug}` },
   };
 }
@@ -54,7 +54,7 @@ export default async function CityPage({
           `${site.url}/locations/${location.slug}`,
         )}
       />
-      <header className="border-b border-line bg-[#0d1614] text-paper">
+      <header className="border-b border-line bg-forest text-paper">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <p className="text-xs uppercase tracking-[0.2em] text-scan">
             {location.city}, {location.state}
@@ -113,7 +113,7 @@ export default async function CityPage({
         </div>
       </section>
 
-      <section className="bg-[#ece8e0]">
+      <section className="bg-[#f4f8fc]">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-2">
           <div>
             <h2 className="serif text-3xl">Request an inspection in {location.city}</h2>

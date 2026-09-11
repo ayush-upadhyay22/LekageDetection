@@ -7,8 +7,8 @@ export default function ReportPreview() {
   return (
     <div className="border border-line bg-white shadow-[0_24px_80px_rgba(22,26,24,0.08)]">
       <div className="flex items-center justify-between border-b border-line px-5 py-3 text-xs uppercase tracking-[0.16em] text-muted">
-        <span>Aperture · Inspection file</span>
-        <span>AP-1842</span>
+        <span>LEAKScan-IQ · Inspection file</span>
+        <span>LSIQ-1842</span>
       </div>
       <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
         <div className="p-5">
@@ -39,9 +39,9 @@ export default function ReportPreview() {
             candidate.
           </p>
         </div>
-        <div className="border-t border-line bg-[#0d1614] p-5 text-paper md:border-l md:border-t-0">
+        <div className="border-t border-line bg-forest p-5 text-paper md:border-l md:border-t-0">
           <p className="text-xs uppercase tracking-[0.16em] text-paper/50">Thermal frame</p>
-          <div className="mt-3 h-40 bg-[linear-gradient(90deg,#1b4a42,#2f8f78,#c45c26)] opacity-90" />
+          <div className="mt-3 h-40 bg-[linear-gradient(90deg,#0A3D7A,#4DA3FF,#ffffff)] opacity-90" />
           <p className="mt-3 text-xs leading-5 text-paper/70">
             Cooler band marked. Not a through-wall image. Inspector: R. Mehta
           </p>

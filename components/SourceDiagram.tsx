@@ -17,7 +17,7 @@ export default function SourceDiagram() {
         <circle cx="40" cy="36" r="6" fill="currentColor" />
         <circle cx="333" cy="36" r="6" fill="currentColor" />
         <circle cx="626" cy="36" r="6" fill="currentColor" />
-        <circle cx="880" cy="36" r="6" className="source-pulse" fill="#b85a2a" />
+        <circle cx="880" cy="36" r="6" className="source-pulse" fill="#1677D0" />
       </svg>
       <ol className="grid gap-4 md:grid-cols-4">
         {nodes.map((node, index) => (

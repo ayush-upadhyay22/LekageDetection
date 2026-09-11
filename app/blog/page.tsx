@@ -4,9 +4,9 @@ import PageHeader from "../../components/PageHeader";
 import { blogCategories, posts } from "../../lib/data/blog";
 
 export const metadata: Metadata = {
-  title: "Journal",
+  title: "Water leakage detection guides",
   description:
-    "Guides on water leakage, dampness, thermal inspection, and buying a property without ignoring wet-area risk.",
+    "LEAKScan-IQ journal: how to find a water leak without breaking walls, why dampness returns, bathroom leakage signs, and thermal inspection.",
   alternates: { canonical: "/blog" },
 };
 

@@ -12,7 +12,7 @@ const trust = [
 
 export default function Hero() {
   return (
-    <section className="bg-[#0d1614] text-paper">
+    <section className="bg-forest text-paper">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
         <div>
           <p className="text-xs uppercase tracking-[0.22em] text-scan">{site.tagline}</p>
@@ -20,8 +20,9 @@ export default function Hero() {
             Know exactly where the leak is.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-8 text-paper/75 md:text-lg">
-            Advanced water leakage, dampness, and property inspection using modern
-            diagnostic technology and experienced inspection professionals.
+            LEAKScan-IQ delivers water leakage detection, dampness inspection, and
+            property diagnostics with thermal, moisture, and acoustic methods — plus
+            a written report.
           </p>
           <p className="mt-4 text-sm text-paper/55">
             Currently visiting {locations.map((item) => item.city).join(", ")}.

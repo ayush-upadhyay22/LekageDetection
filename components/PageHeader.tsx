@@ -8,7 +8,7 @@ export default function PageHeader({
   body?: string;
 }) {
   return (
-    <header className="border-b border-line bg-[#ece8e0]">
+    <header className="border-b border-line bg-[#f4f8fc]">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
         {eyebrow ? (
           <p className="text-xs uppercase tracking-[0.2em] text-forest">{eyebrow}</p>

@@ -1,9 +1,11 @@
-# Aperture — water leakage detection
+# LEAKScan-IQ — water leakage detection
 
-This GitHub page is the **source code**, not the live website. GitHub always shows this README on the repository.
+This GitHub page is the **source code**, not the live website.
 
-**Open the website here:**  
+**Open the website:**  
 https://ayush-upadhyay22.github.io/LekageDetection/
+
+LEAKScan-IQ offers water leakage detection, dampness inspection, seepage detection, and property inspection in Indore, Bhopal, Ahmedabad, and Mumbai.
 
 ## Local preview
 

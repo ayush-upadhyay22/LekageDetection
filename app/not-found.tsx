@@ -7,7 +7,7 @@ export default function NotFound() {
       <h1 className="serif mt-3 text-4xl">This page is not in the file.</h1>
       <p className="mt-4 text-muted">The route may have moved, or the city is not listed yet.</p>
       <Link href="/" className="mt-8 inline-flex bg-forest px-5 py-3 text-sm text-paper">
-        Back to Aperture
+        Back to LEAKScan-IQ
       </Link>
     </main>
   );

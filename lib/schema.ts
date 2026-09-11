@@ -1,4 +1,5 @@
 import { site } from "./site";
+import { locations } from "./data/locations";
 
 export function stringifyJsonLd(data: Record<string, unknown>) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -7,14 +8,44 @@ export function stringifyJsonLd(data: Record<string, unknown>) {
 export function localBusinessJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: site.legalName,
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    name: site.name,
+    alternateName: ["LEAK Scan IQ", "LeakScan IQ", "LEAKScan IQ"],
     description: site.description,
     url: site.url,
+    image: `${site.url}/logo.svg`,
+    logo: `${site.url}/logo.svg`,
     telephone: site.phoneTel,
     email: site.email,
-    areaServed: "IN",
+    priceRange: "₹₹",
+    areaServed: locations.map((location) => ({
+      "@type": "City",
+      name: location.city,
+    })),
     openingHours: "Mo-Sa 09:00-19:00",
+    knowsAbout: [
+      "Water leakage detection",
+      "Dampness inspection",
+      "Seepage detection",
+      "Thermal inspection",
+      "Property inspection",
+    ],
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: site.url,
+    description: site.description,
+    inLanguage: "en-IN",
+    publisher: {
+      "@type": "Organization",
+      name: site.legalName,
+      url: site.url,
+    },
   };
 }
 
@@ -24,9 +55,11 @@ export function serviceJsonLd(name: string, description: string, url: string) {
     "@type": "Service",
     name,
     description,
+    brand: site.name,
     provider: {
       "@type": "LocalBusiness",
       name: site.legalName,
+      url: site.url,
     },
     areaServed: "IN",
     url,
@@ -55,7 +88,7 @@ export function articleJsonLd(title: string, description: string, url: string) {
     headline: title,
     description,
     author: { "@type": "Organization", name: site.legalName },
-    publisher: { "@type": "Organization", name: site.legalName },
+    publisher: { "@type": "Organization", name: site.legalName, logo: `${site.url}/logo.svg` },
     url,
   };
 }

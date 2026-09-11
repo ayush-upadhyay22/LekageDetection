@@ -5,7 +5,7 @@ import PageHeader from "../../components/PageHeader";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Aperture is a technology-first property inspection practice focused on finding moisture sources and documenting building condition.",
+    "LEAKScan-IQ is a technology-first water leakage detection and property inspection practice. We find moisture sources and document building condition.",
   alternates: { canonical: "/about" },
 };
 
@@ -15,7 +15,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="An inspection company, not a waterproofing stall with a camera."
-        body="Aperture exists to answer a narrow question: where is the moisture coming from, and what should you do next?"
+        body="LEAKScan-IQ exists to answer a narrow question: where is the moisture coming from, and what should you do next?"
       />
       <div className="mx-auto max-w-3xl space-y-6 px-5 py-16 text-base leading-8">
         <p>

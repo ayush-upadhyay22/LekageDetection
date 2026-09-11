@@ -4,9 +4,9 @@ import ServiceCard from "../../components/ServiceCard";
 import { services } from "../../lib/data/services";
 
 export const metadata: Metadata = {
-  title: "Inspection services",
+  title: "Water leakage detection services",
   description:
-    "Water leakage detection, dampness and seepage inspection, thermal and acoustic methods, property and construction quality reviews.",
+    "LEAKScan-IQ services: water leakage detection, dampness inspection, seepage detection, thermal inspection, underground leak detection, and property inspection.",
   alternates: { canonical: "/services" },
 };
 

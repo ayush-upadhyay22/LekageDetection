@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { track } from "../lib/analytics";
 import { navLinks, site } from "../lib/site";
+import BrandMark from "./BrandMark";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,11 +14,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-paper/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="flex items-baseline gap-2">
-          <span className="serif text-xl tracking-tight">{site.name}</span>
-          <span className="hidden text-[11px] uppercase tracking-[0.18em] text-muted sm:inline">
-            Inspection
-          </span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <BrandMark />
+          <span className="text-lg font-semibold tracking-tight">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-7 text-sm md:flex">

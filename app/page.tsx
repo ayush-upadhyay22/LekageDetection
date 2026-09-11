@@ -18,13 +18,15 @@ import TechnologyGrid from "../components/TechnologyGrid";
 import { faqs } from "../lib/data/faqs";
 import { services } from "../lib/data/services";
 import { faqJsonLd } from "../lib/schema";
+import { site } from "../lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Aperture — Water leakage detection & property inspection",
+    absolute: "LEAKScan-IQ | Water Leakage Detection, Dampness & Property Inspection",
   },
   description:
-    "Technology-first water leakage detection, dampness inspection, and property diagnostics. Find the source. Fix the cause. Protect the property.",
+    "Book LEAKScan-IQ for water leakage detection, dampness inspection, seepage detection, and thermal property inspection in Indore, Bhopal, Ahmedabad, and Mumbai.",
+  keywords: [...site.keywords],
   alternates: { canonical: "/" },
 };
 
@@ -197,13 +199,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#ece8e0]">
+      <section className="bg-[#f4f8fc]">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-2">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-forest">Book</p>
             <h2 className="serif mt-3 text-4xl">Request an inspection</h2>
             <p className="mt-4 max-w-md text-muted">
-              Five short steps. We reply with scope and fee before we travel.
+              Add photos, pay the visit fee, and send the request. We confirm
+              the slot before we travel.
             </p>
           </div>
           <LeadForm />

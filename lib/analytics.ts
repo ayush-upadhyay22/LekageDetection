@@ -6,7 +6,9 @@ export type AnalyticsEvent =
   | "form_submitted"
   | "service_viewed"
   | "location_viewed"
-  | "report_sample_opened";
+  | "report_sample_opened"
+  | "photo_added"
+  | "payment_started";
 
 declare global {
   interface Window {

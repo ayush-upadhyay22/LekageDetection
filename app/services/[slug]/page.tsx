@@ -23,8 +23,8 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
   return {
-    title: service.name,
-    description: service.short,
+    title: `${service.name} near you`,
+    description: `${service.short} LEAKScan-IQ ${service.name.toLowerCase()} for homes and commercial buildings.`,
     alternates: { canonical: `/services/${service.slug}` },
   };
 }
@@ -49,7 +49,7 @@ export default async function ServicePage({
           `${site.url}/services/${service.slug}`,
         )}
       />
-      <header className="border-b border-line bg-[#ece8e0]">
+      <header className="border-b border-line bg-[#f4f8fc]">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <p className="text-xs uppercase tracking-[0.2em] text-forest">Service</p>
           <h1 className="serif mt-3 text-4xl md:text-5xl">{service.name}</h1>

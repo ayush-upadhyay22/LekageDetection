@@ -6,9 +6,9 @@ import { faqs } from "../../lib/data/faqs";
 import { faqJsonLd } from "../../lib/schema";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Water leakage detection FAQ",
   description:
-    "How water leakage detection works, what thermal imaging can and cannot do, reports, timing, and fees.",
+    "LEAKScan-IQ answers: how water leakage detection works, hidden leaks without breaking walls, thermal imaging limits, reports, timing, and fees.",
   alternates: { canonical: "/faq" },
 };
 

@@ -2,13 +2,17 @@ import Link from "next/link";
 import { services } from "../lib/data/services";
 import { locations } from "../lib/data/locations";
 import { site } from "../lib/site";
+import BrandMark from "./BrandMark";
 
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-line bg-forest text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4">
         <div>
-          <p className="serif text-2xl">{site.name}</p>
+          <div className="flex items-center gap-2.5">
+            <BrandMark className="h-9 w-9" />
+            <p className="text-xl font-semibold">{site.name}</p>
+          </div>
           <p className="mt-3 max-w-xs text-sm leading-6 text-paper/70">{site.tagline}</p>
         </div>
         <div>

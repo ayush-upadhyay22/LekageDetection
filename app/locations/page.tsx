@@ -3,9 +3,9 @@ import LocationGrid from "../../components/LocationGrid";
 import PageHeader from "../../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Inspection locations",
+  title: "Water leakage detection near you",
   description:
-    "Water leakage detection and property inspection in Indore, Bhopal, Ahmedabad, Mumbai, and expanding cities.",
+    "LEAKScan-IQ water leakage detection in Indore, Bhopal, Ahmedabad, and Mumbai. Find dampness and seepage inspection near you.",
   alternates: { canonical: "/locations" },
 };
 

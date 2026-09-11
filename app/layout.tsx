@@ -4,7 +4,7 @@ import FloatingContactButtons from "../components/FloatingContactButtons";
 import Footer from "../components/Footer";
 import JsonLd from "../components/JsonLd";
 import Navbar from "../components/Navbar";
-import { localBusinessJsonLd } from "../lib/schema";
+import { localBusinessJsonLd, websiteJsonLd } from "../lib/schema";
 import { site } from "../lib/site";
 import "./globals.css";
 
@@ -27,17 +27,41 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Water leakage detection & property inspection`,
-    template: `%s · ${site.name}`,
+    default: "LEAKScan-IQ | Water Leakage Detection & Property Inspection",
+    template: `%s | LEAKScan-IQ`,
   },
   description: site.description,
+  keywords: [...site.keywords],
+  authors: [{ name: site.legalName, url: site.url }],
+  creator: site.legalName,
+  publisher: site.legalName,
+  applicationName: site.name,
+  category: "property inspection",
   openGraph: {
-    title: `${site.name} — Find the source. Fix the cause. Protect the property.`,
+    title: "LEAKScan-IQ | Water Leakage Detection & Property Inspection",
     description: site.description,
     url: site.url,
-    siteName: site.legalName,
+    siteName: site.name,
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/og.svg",
+        width: 1200,
+        height: 630,
+        alt: "LEAKScan-IQ — water leakage detection",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LEAKScan-IQ | Water Leakage Detection",
+    description: site.description,
+    images: ["/og.svg"],
+  },
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
   },
   robots: { index: true, follow: true },
 };
@@ -45,11 +69,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col pb-16 md:pb-0">
         <JsonLd data={localBusinessJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
         <Navbar />
         {children}
         <Footer />

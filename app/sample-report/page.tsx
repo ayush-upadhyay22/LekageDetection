@@ -6,7 +6,7 @@ import PageHeader from "../../components/PageHeader";
 export const metadata: Metadata = {
   title: "Sample inspection report",
   description:
-    "See how Aperture documents property information, observations, moisture readings, thermal frames, and recommendations.",
+    "See how LEAKScan-IQ documents property information, observations, moisture readings, thermal frames, and recommendations.",
   alternates: { canonical: "/sample-report" },
 };
 
@@ -22,7 +22,7 @@ export default function SampleReportPage() {
       <div className="mx-auto max-w-4xl px-5 py-16">
         <div className="border border-line bg-white">
           <div className="flex items-center justify-between border-b border-line px-6 py-4 text-xs uppercase tracking-[0.16em] text-muted">
-            <span>Aperture inspection file</span>
+            <span>LEAKScan-IQ inspection file</span>
             <span>Sample · not a live case</span>
           </div>
           <div className="grid gap-8 p-6 md:grid-cols-2">
@@ -57,12 +57,12 @@ export default function SampleReportPage() {
           <div className="grid border-t border-line md:grid-cols-2">
             <div className="p-6">
               <p className="text-xs uppercase tracking-[0.16em] text-muted">Photograph</p>
-              <div className="mt-3 h-40 bg-[#d8d3c8]" />
+              <div className="mt-3 h-40 bg-[#d6e2f0]" />
               <p className="mt-2 text-xs text-muted">Ceiling stain, living room</p>
             </div>
-            <div className="border-t border-line bg-[#0d1614] p-6 text-paper md:border-l md:border-t-0">
+            <div className="border-t border-line bg-forest p-6 text-paper md:border-l md:border-t-0">
               <p className="text-xs uppercase tracking-[0.16em] text-paper/50">Thermal frame</p>
-              <div className="mt-3 h-40 bg-[linear-gradient(90deg,#1b4a42,#2f8f78_40%,#c45c26)]" />
+              <div className="mt-3 h-40 bg-[linear-gradient(90deg,#0A3D7A,#4DA3FF_40%,#ffffff)]" />
               <p className="mt-3 text-xs text-paper/70">
                 Cooler band at slab-wall junction. Surface temperature only.
               </p>
