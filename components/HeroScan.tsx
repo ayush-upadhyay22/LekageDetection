@@ -4,12 +4,15 @@ export default function HeroScan() {
       <div className="hero-inspect-viewport relative aspect-[5/4] w-full overflow-hidden">
         <div className="hero-wall absolute inset-0">
           <BuildingScene />
-          <div className="hero-scan-beam pointer-events-none absolute inset-x-0 top-0 h-20" />
-          <div className="hero-reticle pointer-events-none absolute left-[48%] top-[54%] h-24 w-24 -translate-x-1/2 -translate-y-1/2">
-            <span className="absolute inset-0 rounded-full border border-scan/80" />
-            <span className="absolute left-1/2 top-0 h-full w-px bg-scan/70" />
-            <span className="absolute left-0 top-1/2 h-px w-full bg-scan/70" />
-          </div>
+        </div>
+        <div className="hero-reticle pointer-events-none absolute z-10 h-20 w-20">
+          <span className="absolute inset-0 rounded-full border border-scan/90 shadow-[0_0_18px_rgba(77,163,255,0.55)]" />
+          <span className="absolute left-1/2 top-0 h-full w-px bg-scan" />
+          <span className="absolute left-0 top-1/2 h-px w-full bg-scan" />
+          <span className="absolute left-1 top-1 h-3 w-3 border-l border-t border-scan" />
+          <span className="absolute right-1 top-1 h-3 w-3 border-r border-t border-scan" />
+          <span className="absolute bottom-1 left-1 h-3 w-3 border-b border-l border-scan" />
+          <span className="absolute right-1 bottom-1 h-3 w-3 border-b border-r border-scan" />
         </div>
 
         <div className="hero-pipe absolute inset-0">

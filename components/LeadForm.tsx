@@ -1,8 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { track } from "../lib/analytics";
-import { indianStates, stateNames } from "../lib/data/india-address";
 import {
   inspectionPackages,
   site,
@@ -38,9 +37,8 @@ const empty = {
   need: "",
   propertyType: "",
   address: "",
-  state: "",
   city: "",
-  pincode: "",
+  state: "",
   name: "",
   phone: "",
   email: "",
@@ -55,25 +53,16 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
   const [step, setStep] = useState(1);
   const [started, setStarted] = useState(false);
   const [form, setForm] = useState(empty);
-  const [cityQuery, setCityQuery] = useState("");
   const [done, setDone] = useState(false);
 
   const selectedPackage =
     inspectionPackages.find((item) => item.id === form.packageId) ??
     inspectionPackages[0];
 
-  const cities = useMemo(() => {
-    const all = form.state ? indianStates[form.state] ?? [] : [];
-    const query = cityQuery.trim().toLowerCase();
-    if (!query) return all;
-    return all.filter((city) => city.toLowerCase().includes(query));
-  }, [form.state, cityQuery]);
-
   const addressComplete =
-    form.address.trim().length > 6 &&
-    Boolean(form.state) &&
-    Boolean(form.city) &&
-    /^\d{6}$/.test(form.pincode);
+    form.address.trim().length >= 1 &&
+    form.city.trim().length > 1 &&
+    form.state.trim().length > 1;
 
   function start() {
     if (!started) {
@@ -84,11 +73,6 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
 
   function update(key: keyof typeof empty, value: string | boolean) {
     start();
-    if (key === "state") {
-      setCityQuery("");
-      setForm((current) => ({ ...current, state: String(value), city: "" }));
-      return;
-    }
     setForm((current) => ({ ...current, [key]: value }));
   }
 
@@ -111,7 +95,6 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
     `Address: ${form.address}`,
     `City: ${form.city}`,
     `State: ${form.state}`,
-    `PIN: ${form.pincode}`,
     `Package: ${selectedPackage.name} · ₹${selectedPackage.amount}`,
     `Payment: ${form.paid ? `UPI done${form.utr ? ` · UTR ${form.utr}` : ""}` : "not marked paid yet"}`,
     `Name: ${form.name}`,
@@ -194,7 +177,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
         <div className="mt-6 grid gap-4">
           <p className="serif text-2xl">Inspection address</p>
           <label className="grid gap-1 text-sm">
-            Full address
+            Street address
             <textarea
               required
               rows={3}
@@ -204,66 +187,30 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
               className="border border-line bg-paper px-3 py-2"
             />
           </label>
-          <label className="grid gap-1 text-sm">
-            State
-            <select
-              required
-              value={form.state}
-              onChange={(event) => update("state", event.target.value)}
-              className={fieldClass}
-            >
-              <option value="">Select state</option>
-              {stateNames.map((state) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="grid gap-1 text-sm">
-            City
-            <input
-              type="search"
-              disabled={!form.state}
-              value={cityQuery}
-              placeholder={
-                form.state ? "Search city" : "Select state first"
-              }
-              onChange={(event) => setCityQuery(event.target.value)}
-              className={`${fieldClass} disabled:cursor-not-allowed disabled:opacity-50`}
-            />
-            <select
-              required
-              value={form.city}
-              disabled={!form.state}
-              onChange={(event) => update("city", event.target.value)}
-              className={`${fieldClass} disabled:cursor-not-allowed disabled:opacity-50`}
-            >
-              <option value="">
-                {form.state ? "Select city" : "Select state first"}
-              </option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="grid gap-1 text-sm">
-            PIN code
-            <input
-              required
-              inputMode="numeric"
-              pattern="\d{6}"
-              maxLength={6}
-              value={form.pincode}
-              onChange={(event) =>
-                update("pincode", event.target.value.replace(/\D/g, "").slice(0, 6))
-              }
-              placeholder="6-digit PIN"
-              className={fieldClass}
-            />
-          </label>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="grid gap-1 text-sm">
+              City
+              <input
+                required
+                value={form.city}
+                onChange={(event) => update("city", event.target.value)}
+                placeholder="City"
+                className={fieldClass}
+                autoComplete="address-level2"
+              />
+            </label>
+            <label className="grid gap-1 text-sm">
+              State
+              <input
+                required
+                value={form.state}
+                onChange={(event) => update("state", event.target.value)}
+                placeholder="State"
+                className={fieldClass}
+                autoComplete="address-level1"
+              />
+            </label>
+          </div>
         </div>
       ) : null}
 
@@ -366,7 +313,7 @@ export default function LeadForm({ compact = false }: { compact?: boolean }) {
         ) : null}
         {step === 3 && !addressComplete ? (
           <p className="text-sm text-muted">
-            Enter full address, state, city, and a 6-digit PIN code.
+            Enter street address, city, and state.
           </p>
         ) : null}
         <div className="flex gap-3">
