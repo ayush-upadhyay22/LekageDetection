@@ -5,7 +5,7 @@ export const site = {
   description:
     "LEAKScan-IQ provides water leakage detection, dampness inspection, seepage detection, thermal inspection, and property diagnostics for homes, societies, and commercial buildings in Indore, Bhopal, Ahmedabad, and Mumbai.",
   url: "https://ayush-upadhyay22.github.io/LekageDetection",
-  email: "ayushupadhyay22@gmail.com",
+  email: "leakscaniq@gmail.com",
   phoneDisplay: "+91 88399 70150",
   phoneTel: "+918839970150",
   whatsapp: "918839970150",
